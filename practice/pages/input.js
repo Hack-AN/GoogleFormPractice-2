@@ -2,7 +2,7 @@ import {v4 as uuidv4} from 'uuid'
 import axios from "axios"
 import React, {useState} from "react"
 
-export default function input() {
+export default function Input() {
 
     const [title, setTitle] = useState("")
     const [questions, setQuestions] = useState([])
