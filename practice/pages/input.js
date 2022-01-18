@@ -28,24 +28,9 @@ export default function Input() {
     }
 
     const submit = async () => {
-        //alert(questions.length);
-        axios.post("http://http://nodejs-tutorial-domain.net/route", {data: questions}).then( res => {
-            
-
+        const formId = uuidv4()
+        axios.post("http://nodejs-tutorial-domain.net/route", {formId: formId, title:title, data: questions}).then( res => {
             console.log(res.data);
-            //const questions = req.body.questions
-            /*
-            await forEach(questions, async(question, index) => {
-                const result = await FormQuestions.create({
-                    googleFormId: question.uuid,
-                    title: questions.title,
-                    questionType: question.questionType,
-                    description: question.description
-                })
-                console.log(result)
-            })
-            */
-
           });
     }
 
