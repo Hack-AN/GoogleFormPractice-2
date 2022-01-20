@@ -29,7 +29,7 @@ export default function Input() {
 
     const submit = async () => {
         const formId = uuidv4()
-        axios.post("https://final.nodejs-tutorial-domain.net//route", {formId: formId, title:title, data: questions}).then( res => {
+        axios.post("http://final.nodejs-tutorial-domain.net//route", {formId: formId, title:title, data: questions}).then( res => {
             console.log(res.data);
           });
     }
