@@ -29,7 +29,7 @@ export default function Input() {
 
     const submit = async () => {
         const formId = uuidv4()
-        const response = await axios.get("http://final.nodejs-tutorial-domain.net")
+        const response = await axios.get("https://final.nodejs-tutorial-domain.net")
         console.log(response.data.message)
 
     }
