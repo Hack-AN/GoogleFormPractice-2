@@ -49,14 +49,7 @@ export default function Input() {
         console.log(content.form)
         window.location.href='/form/${content.form.id}'
 */  
-        const url = "https://final.nodejs-tutorial-domain.net"
-
-        /*
-        axios.get(url)
-        .then(
-            res => {console.log(res)}
-        );
-        */
+        const url = "https://final.nodejs-tutorial-domain.net/route"
         
         axios.post(url, {formId: formId, title:title, data: questions}).then( res => {
             console.log(res);
