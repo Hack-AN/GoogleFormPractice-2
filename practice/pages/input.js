@@ -2,6 +2,7 @@ import {v4 as uuidv4} from 'uuid'
 import axios from "axios"
 import React, {useState} from "react"
 
+
 export default function Input() {
 
     const [title, setTitle] = useState("")
@@ -28,10 +29,41 @@ export default function Input() {
     }
 
     const submit = async () => {
+
         const formId = uuidv4()
-        const response = axios.get("https://final.nodejs-tutorial-domain.net/")
-        console.log(response.data.message)
-         
+        /*
+        const url = "http://final.nodejs-tutorial-domain.net/route";
+
+        const rawResponse = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({formId: formId, title:title, data: questions})
+        })
+
+        const content = await rawResponse.json();
+
+        console.log(content.success)
+        console.log(content.form)
+        window.location.href='/form/${content.form.id}'
+*/  
+        const url = "https://final.nodejs-tutorial-domain.net"
+
+        /*
+        axios.get(url)
+        .then(
+            res => {console.log(res)}
+        );
+        */
+        
+        axios.post(url, {formId: formId, title:title, data: questions}).then( res => {
+            console.log(res);
+        });
+        
+         //https://final.nodejs-tutorial-domain.net/route
+         //http://localhost:8000/route
 
     }
 
